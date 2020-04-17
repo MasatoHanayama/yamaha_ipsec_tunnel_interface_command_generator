@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/python3
 #-*- encoding: utf-8 -*-
 
 # そのうち機能追加予定
