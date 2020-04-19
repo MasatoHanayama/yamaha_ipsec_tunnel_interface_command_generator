@@ -2,8 +2,15 @@
 #-*- encoding: utf-8 -*-
 
 # そのうち機能追加予定
-# import argparse
+import argparse
 
+parser = argparse.ArgumentParser(description='''
+YAMAHA L2TP tunnel config command generator.
+''')
+
+args = parser.parse_args()
+
+transport = ''
 with open('./conf.txt', 'w') as f:
     for i in range(1, 101, 1):
         f.write('tunnel select ' + str(i) + '\n')
@@ -19,3 +26,5 @@ with open('./conf.txt', 'w') as f:
         f.write('l2tp tunnel disconnect time off\n')
         f.write('ip tunnel tcp mss limit auto\n')
         f.write('tunnel enable ' + str(i) + '\n')
+        transport += 'ipsec transport ' + str(i) + ' ' + str(i) + ' udp 1701\n'
+    f.write(transport)
