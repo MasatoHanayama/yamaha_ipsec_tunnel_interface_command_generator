@@ -39,7 +39,6 @@ with open('./conf.txt', 'w') as f:
         f.write('tunnel select ' + str(i) + '\n')
         f.write('tunnel capsulation l2tp\n')
         f.write('ipsec tunnel ' + str(i) + '\n')
-        # f.write(' ipsec sa policy ' + str(i) + ' ' + str(i) + ' esp 3es-cbc shs-hmac\n')
         f.write(' ipsec sa policy ' + str(i) + ' ' + str(i) + ' esp ' + encrypt + ' ' + cert + '\n')
         f.write(' ipsec ike keepalive log ' + str(i) + ' off\n')
         f.write(' ipsec ike keepalive use ' + str(i) + ' off\n')
