@@ -1,4 +1,4 @@
-# yamaha_l2tp_generator
+# yamaha_ipsec_tunnel_interface_command_generator
 
 ```
 optional arguments:  
